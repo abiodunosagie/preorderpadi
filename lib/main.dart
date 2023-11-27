@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
+import 'app.dart';
+
 //main function
+/// ------- Entry point of the Flutter App -----
 void main() {
+  // Todo: Add Widgets Binding
+  // Todo: Init Local Storage
+  // Todo: Await Native Splash
+  // Todo: Initialize Firebase
+  // Todo: Initialize Authenticaiton
+
   runApp(const Preorderpadi());
-}
-
-class Preorderpadi extends StatelessWidget {
-  const Preorderpadi({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
 }
