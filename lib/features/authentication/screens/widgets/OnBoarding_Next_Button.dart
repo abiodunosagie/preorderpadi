@@ -19,6 +19,9 @@ class OnboardingNextButton extends StatelessWidget {
       bottom: TDeviceUtils.getBottomNavigationBarHeight(),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
+          side: const BorderSide(
+            color: Colors.transparent,
+          ),
           shape: const CircleBorder(),
           backgroundColor: dark ? TColors.primary : Colors.black,
         ),
