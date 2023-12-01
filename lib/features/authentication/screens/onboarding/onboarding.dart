@@ -4,10 +4,10 @@ import 'package:preorderpadi/utils/constants/text_strings.dart';
 
 import '../../../../utils/constants/image_strings.dart';
 import '../../controllers.onboarding/onboarding_controller.dart';
-import '../widgets/OnBoarding_Next_Button.dart';
-import '../widgets/onboarding_dot_navigation.dart';
-import '../widgets/onboarding_page.dart';
-import '../widgets/onboarding_skip.dart';
+import '../widgets.onboarding/OnBoarding_Next_Button.dart';
+import '../widgets.onboarding/onboarding_dot_navigation.dart';
+import '../widgets.onboarding/onboarding_page.dart';
+import '../widgets.onboarding/onboarding_skip.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
