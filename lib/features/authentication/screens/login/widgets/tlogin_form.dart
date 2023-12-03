@@ -23,6 +23,7 @@ class TLoginForm extends StatelessWidget {
           children: [
             /// Email
             TextFormField(
+              keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.direct_right),
                 labelText: TTexts.email,
@@ -51,12 +52,16 @@ class TLoginForm extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 /// Remember me
-                Checkbox(
-                  value: true,
-                  onChanged: (value) {},
-                ),
-                const Text(
-                  TTexts.rememberMe,
+                Row(
+                  children: [
+                    Checkbox(
+                      value: true,
+                      onChanged: (value) {},
+                    ),
+                    const Text(
+                      TTexts.rememberMe,
+                    ),
+                  ],
                 ),
 
                 /// Forget Password
@@ -97,7 +102,7 @@ class TLoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () => Get.to(() => SignUpScreen()),
+                onPressed: () => Get.to(() => const SignUpScreen()),
                 child: const Text(
                   TTexts.createAccount,
                 ),

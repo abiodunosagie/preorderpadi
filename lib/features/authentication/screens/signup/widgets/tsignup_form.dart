@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:preorderpadi/features/authentication/screens/signup/verify_email.dart';
 
-import '../../../../../common/widgets/form_divider.dart';
-import '../../../../../common/widgets/social_buttons.dart';
+import '../../../../../common/widgets/login_signup/form_divider.dart';
+import '../../../../../common/widgets/login_signup/social_buttons.dart';
 import '../../../../../utils/constants/color.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';

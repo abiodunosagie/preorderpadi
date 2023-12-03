@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:preorderpadi/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:preorderpadi/utils/theme/theme.dart';
 
-///  -- Use this class to setup temes, inital bindings, any animation and much more
+///  -- Use this class to setup themes, initial bindings, any animation and much more
 
 class Preorderpadi extends StatelessWidget {
   const Preorderpadi({super.key});

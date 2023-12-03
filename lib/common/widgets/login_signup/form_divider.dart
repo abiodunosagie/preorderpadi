@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:preorderpadi/utils/helpers/helper_function.dart';
 
-import '../../utils/constants/color.dart';
+import '../../../utils/constants/color.dart';
 
 class TFormDivider extends StatelessWidget {
   const TFormDivider({

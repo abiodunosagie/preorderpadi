@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:preorderpadi/features/authentication/screens/login/login.dart';
+import 'package:preorderpadi/features/authentication/screens/password_configuration/forgot_password.dart';
 import 'package:preorderpadi/utils/constants/image_strings.dart';
 import 'package:preorderpadi/utils/constants/sizes.dart';
 import 'package:preorderpadi/utils/constants/text_strings.dart';
@@ -63,7 +65,7 @@ class ResetPassword extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(() => const LoginScreen()),
                 child: const Text(
                   TTexts.done,
                 ),
@@ -75,7 +77,7 @@ class ResetPassword extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () => Get.to(() => const ForgotPassword()),
                 child: const Text(
                   TTexts.resendEmail,
                 ),

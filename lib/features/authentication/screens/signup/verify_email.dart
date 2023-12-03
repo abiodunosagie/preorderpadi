@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:preorderpadi/common/widgets/success_screens/success_screen.dart';
 import 'package:preorderpadi/features/authentication/screens/login/login.dart';
+import 'package:preorderpadi/features/authentication/screens/signup/signup.dart';
 import 'package:preorderpadi/utils/constants/image_strings.dart';
 import 'package:preorderpadi/utils/constants/sizes.dart';
 import 'package:preorderpadi/utils/constants/text_strings.dart';
@@ -90,7 +91,7 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const SignUpScreen()),
                   child: const Text(
                     TTexts.resendEmail,
                   ),
