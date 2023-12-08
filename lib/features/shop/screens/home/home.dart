@@ -1,50 +1,58 @@
 import 'package:flutter/material.dart';
-import 'package:preorderpadi/common/widgets/appbar/TAppBar.dart';
+import 'package:preorderpadi/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:preorderpadi/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:preorderpadi/utils/constants/color.dart';
-import 'package:preorderpadi/utils/constants/text_strings.dart';
+import 'package:preorderpadi/utils/constants/sizes.dart';
 
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
-import '../../../../common/widgets/products.cart/cart_menu_icon.dart';
+import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
+import '../../../../common/widgets/texts/section_heading.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             TPrimaryHeaderContainer(
               child: Column(
                 children: [
-                  TAppBar(
-                    title: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  /// --- Appbar
+                  THomeAppBar(),
+                  SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  ),
+
+                  /// --- Searchbar
+                  TSearchContainer(
+                    text: 'Search in Store',
+                  ),
+                  SizedBox(
+                    height: TSizes.spaceBtwItems,
+                  ),
+
+                  /// --- Categories section
+                  /// heading
+                  Padding(
+                    padding: EdgeInsets.only(left: TSizes.defaultSpace),
+                    child: Column(
                       children: [
-                        Text(
-                          TTexts.homeAppbarTitle,
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelMedium!
-                              .apply(color: TColors.grey),
-                        ),
-                        Text(
-                          TTexts.homeAppbarSubTitle,
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineSmall!
-                              .apply(color: TColors.white),
+                        TSectionHeading(
+                          title: 'Popular Categories',
+                          textColor: TColors.white,
                         ),
                       ],
                     ),
-                    actions: [
-                      TCartCounterIcon(
-                        onPressed: () {},
-                        iconColor: TColors.white,
-                      ),
-                    ],
                   ),
+                  SizedBox(
+                    height: TSizes.spaceBtwItems,
+                  ),
+
+                  /// Scrollable Categories
+                  THomeCategories(),
                 ],
               ),
             ),
