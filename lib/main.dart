@@ -9,7 +9,7 @@ void main() {
   // Todo: Init Local Storage
   // Todo: Await Native Splash
   // Todo: Initialize Firebase
-  // Todo: Initialize Authenticaiton
+  // Todo: Initialize Authentication
 
   runApp(const Preorderpadi());
 }
