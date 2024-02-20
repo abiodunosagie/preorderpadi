@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:preorderpadi/features/authentication/screens/onboarding/widgets.onboarding/OnBoarding_Next_Button.dart';
+import 'package:preorderpadi/features/authentication/screens/onboarding/widgets.onboarding/onboarding_dot_navigation.dart';
+import 'package:preorderpadi/features/authentication/screens/onboarding/widgets.onboarding/onboarding_page.dart';
+import 'package:preorderpadi/features/authentication/screens/onboarding/widgets.onboarding/onboarding_skip.dart';
 import 'package:preorderpadi/utils/constants/text_strings.dart';
 
 import '../../../../utils/constants/image_strings.dart';
-import '../../controllers.onboarding/onboarding_controller.dart';
-import '../widgets.onboarding/OnBoarding_Next_Button.dart';
-import '../widgets.onboarding/onboarding_dot_navigation.dart';
-import '../widgets.onboarding/onboarding_page.dart';
-import '../widgets.onboarding/onboarding_skip.dart';
+import '../../controllers/onboarding_controller.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});

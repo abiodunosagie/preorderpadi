@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:preorderpadi/features/authentication/controllers.onboarding/onboarding_controller.dart';
 
-import '../../../../utils/constants/color.dart';
-import '../../../../utils/constants/sizes.dart';
-import '../../../../utils/device/device_utility.dart';
-import '../../../../utils/helpers/helper_function.dart';
+import '../../../../../utils/constants/color.dart';
+import '../../../../../utils/constants/sizes.dart';
+import '../../../../../utils/device/device_utility.dart';
+import '../../../../../utils/helpers/helper_function.dart';
+import '../../../controllers/onboarding_controller.dart';
 
 class OnboardingNextButton extends StatelessWidget {
   const OnboardingNextButton({

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:preorderpadi/features/authentication/controllers.onboarding/onboarding_controller.dart';
 import 'package:preorderpadi/utils/helpers/helper_function.dart';
 
-import '../../../../utils/constants/sizes.dart';
-import '../../../../utils/device/device_utility.dart';
+import '../../../../../utils/constants/sizes.dart';
+import '../../../../../utils/device/device_utility.dart';
+import '../../../controllers/onboarding_controller.dart';
 
 class OnBoardingSkip extends StatelessWidget {
   const OnBoardingSkip({

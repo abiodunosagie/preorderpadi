@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "668687715379",
+    "project_id": "preorderpadi-e9166",
+    "storage_bucket": "preorderpadi-e9166.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668687715379:android:c0724fdef70e3003ce2746",
+        "android_client_info": {
+          "package_name": "com.example.preorderpadi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "668687715379-a612edi3bg5s02o4k12ou7jaaqib1p0a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.preorderpadi",
+            "certificate_hash": "d3b93a1e2e242f92cc862e7b4d5ff2b64d7e6973"
+          }
+        },
+        {
+          "client_id": "668687715379-1t76ua93eq62adlpsnfltmihl87dfepf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKzwHCA9Mmko3UQAV1_CaTh-B_WkjDCkI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "668687715379-1t76ua93eq62adlpsnfltmihl87dfepf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "668687715379-tkfqs43pl5h038hiqpeqd7227tje5pek.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.preorderpadi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
