@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:preorderpadi/utils/constants/image_strings.dart';
+import 'package:preorderpadi/utils/loaders/full_screen_loader.dart';
 
 class SignupController extends GetxController {
   static SignupController get instance => Get.find();
@@ -18,11 +20,14 @@ class SignupController extends GetxController {
   Future<void> signup() async {
     try {
       // Start loading
+      TFullScreenLoader.openLoadingDialog(
+          'We are processing your information', TImages.docerAnimation);
       // Check internet connectivity
+      // final isConnected = await NetworkManager.instance.isConnected();
       // Form validation
       // Privacy policy check
       // Register user in the firebase authentication and save user data in the firebase
-      // Save authenticated user in the frebase firestore
+      // Save authenticated user in the firebase firestore
       // Show success message
       // Move to verify email screen
     } catch (e) {
