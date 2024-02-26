@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:preorderpadi/utils/constants/image_strings.dart';
 import 'package:preorderpadi/utils/loaders/full_screen_loader.dart';
+import 'package:preorderpadi/utils/loaders/loaders.dart';
 
 class SignupController extends GetxController {
   static SignupController get instance => Get.find();
@@ -32,8 +33,10 @@ class SignupController extends GetxController {
       // Move to verify email screen
     } catch (e) {
       // Show some generic error to the user
+      TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {
       // Remove loader
+      TFullScreenLoader.stopLoading();
     }
   }
 }
