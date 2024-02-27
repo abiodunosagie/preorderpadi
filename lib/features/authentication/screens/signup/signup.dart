@@ -30,7 +30,7 @@ class SignUpScreen extends StatelessWidget {
               ),
 
               /// Form
-              TSignUpForm(dark: dark),
+              const TSignUpForm(),
             ],
           ),
         ),

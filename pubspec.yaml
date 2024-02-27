@@ -20,7 +20,7 @@ dependencies:
   url_launcher: ^6.2.1
   flutter_native_splash: ^2.3.6
 #------------------icons -------------------------#
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.6
 
   #---------- State Management ------------#
   get: ^4.6.6
@@ -30,6 +30,8 @@ dependencies:
   firebase_core: ^2.25.4
   lottie: ^3.1.0
   connectivity_plus: ^5.0.2
+  cloud_firestore: ^4.15.5
+  firebase_auth: ^4.17.4
 
 
 #-------- Product Specific ----------------------#

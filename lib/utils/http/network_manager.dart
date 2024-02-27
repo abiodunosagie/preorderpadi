@@ -1,19 +1,19 @@
 import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:preorderpadi/utils/loaders/loaders.dart';
 
-/// Manages the network connnectivity status and provides methods to check and handle connectivity  changes.
+/// Manages the network connectivity status and provides methods to check and handle connectivity  changes.
 class NetworkManager extends GetxController {
-  static NetworkManager get isntance => Get.find();
+  static NetworkManager get instance => Get.find();
 
   final Connectivity _connectivity = Connectivity();
   late StreamSubscription<ConnectivityResult> _connectivitySubscription;
-  final Rx<ConnectivityResult> _connectivityStatus =
-      ConnectivityResult.none.obs;
+  final Rx<ConnectivityResult> _connectionStatus = ConnectivityResult.none.obs;
 
-  /// Initalize the network manager and set up a stream to continually check the connection status.
+  /// Initialize the network manager and set up a stream to continually check the connection status.
   @override
   void onInit() {
     super.onInit();
@@ -23,9 +23,31 @@ class NetworkManager extends GetxController {
 
   /// Update the connection status based on changes in connectivity and show a relevant popup for no internet connection.
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {
-    _connectivityStatus.value = result;
-    if (_connectivityStatus.value == ConnectivityResult.none) {
+    _connectionStatus.value = result;
+    if (_connectionStatus.value == ConnectivityResult.none) {
       TLoaders.warningSnackBar(title: 'No Internet Connection');
     }
+  }
+
+  /// Check th internet connection status.
+  /// Returns 'true' if connected, 'false' otherwise.
+  Future<bool> isConnected() async {
+    try {
+      final result = await _connectivity.checkConnectivity();
+      if (result == ConnectivityResult.none) {
+        return false;
+      } else {
+        return true;
+      }
+    } on PlatformException catch (_) {
+      return false;
+    }
+  }
+
+  /// Dispose or close the active connectivity stream.
+  @override
+  void onClose() {
+    super.onClose();
+    _connectivitySubscription.cancel();
   }
 }

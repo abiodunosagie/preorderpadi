@@ -2,26 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:preorderpadi/features/authentication/controllers/signup_controller.dart';
+import 'package:preorderpadi/features/authentication/screens/signup/widgets/terms_and_condition.dart';
+import 'package:preorderpadi/utils/helpers/helper_function.dart';
 import 'package:preorderpadi/utils/validators/validation.dart';
 
 import '../../../../../common/widgets/login_signup/form_divider.dart';
 import '../../../../../common/widgets/login_signup/social_buttons.dart';
-import '../../../../../utils/constants/color.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
 
 class TSignUpForm extends StatelessWidget {
   const TSignUpForm({
     super.key,
-    required this.dark,
   });
-
-  final bool dark;
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignupController());
-
+    final dark = THelperFunctions.isDarkMode(context);
     return Form(
       key: controller.signupFormKey,
       child: Column(
@@ -119,19 +117,26 @@ class TSignUpForm extends StatelessWidget {
           ),
 
           /// Password
-          TextFormField(
-            validator: (value) => TValidator.validatePassword(value),
-            controller: controller.password,
-            keyboardType: TextInputType.visiblePassword,
-            obscureText: true,
-            expands: false,
-            decoration: const InputDecoration(
-              labelText: TTexts.password,
-              prefixIcon: Icon(
-                Iconsax.password_check,
-              ),
-              suffixIcon: Icon(
-                Iconsax.eye_slash,
+          Obx(
+            () => TextFormField(
+              validator: (value) => TValidator.validatePassword(value),
+              controller: controller.password,
+              keyboardType: TextInputType.visiblePassword,
+              obscureText: controller.hidePassword.value,
+              expands: false,
+              decoration: InputDecoration(
+                labelText: TTexts.password,
+                prefixIcon: const Icon(
+                  Iconsax.password_check,
+                ),
+                suffixIcon: IconButton(
+                    onPressed: () => controller.hidePassword.value =
+                        !controller.hidePassword.value,
+                    icon: Icon(
+                      controller.hidePassword.value
+                          ? Iconsax.eye_slash
+                          : Iconsax.eye,
+                    )),
               ),
             ),
           ),
@@ -140,51 +145,7 @@ class TSignUpForm extends StatelessWidget {
           ),
 
           /// Terms & Conditions checkbox
-          FittedBox(
-            child: Row(
-              children: [
-                SizedBox(
-                  width: 24,
-                  height: 24,
-                  child: Checkbox(
-                    value: true,
-                    onChanged: (value) {},
-                  ),
-                ),
-                const SizedBox(
-                  width: TSizes.spaceBtwItems,
-                ),
-                Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                          text: '${TTexts.iAgreeTo} ',
-                          style: Theme.of(context).textTheme.bodySmall),
-                      TextSpan(
-                        text: '${TTexts.privacyPolicy} ',
-                        style: Theme.of(context).textTheme.bodyMedium!.apply(
-                            color: dark ? TColors.white : TColors.primary,
-                            decoration: TextDecoration.underline,
-                            decorationColor:
-                                dark ? TColors.white : TColors.primary),
-                      ),
-                      TextSpan(
-                          text: '${TTexts.and} ',
-                          style: Theme.of(context).textTheme.bodySmall),
-                      TextSpan(
-                        text: '${TTexts.termsOfUse} ',
-                        style: Theme.of(context).textTheme.bodyMedium!.apply(
-                            color: dark ? TColors.white : TColors.primary,
-                            decoration: TextDecoration.underline,
-                            decorationColor:
-                                dark ? TColors.white : TColors.primary),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
+          const TermsAndCondition(),
 
           /// Sign Up Button
           const SizedBox(

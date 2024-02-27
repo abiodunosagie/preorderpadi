@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:preorderpadi/bindings/general_bindings.dart';
 import 'package:preorderpadi/utils/constants/color.dart';
 import 'package:preorderpadi/utils/theme/theme.dart';
 
@@ -15,6 +16,7 @@ class Preorderpadi extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
+      initialBinding: GeneralBindings(),
       home: const Scaffold(
         backgroundColor: TColors.primary,
         body: Center(
